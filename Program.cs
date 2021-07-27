@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ConsoleApp
 {   
-    //Class responsible for processing string input into a list of floats.
+    // Class responsible for processing string input into a list of floats.
     public class DataProcessor
     {
         public static List<float> StringToList(string dailyOpeningPrices)
@@ -14,7 +14,7 @@ namespace ConsoleApp
             var partialValue = new StringBuilder();
 
             // Append characters to the StringBuilder
-            // When ',' encountered, parse made string as a float to the list.
+            // When ',' encountered, parse created string as a float to the list.
             for (int i = 0; i < dailyOpeningPrices.Length; i++)
             {
                 if (dailyOpeningPrices[i] != ',')
@@ -27,15 +27,15 @@ namespace ConsoleApp
                     partialValue.Clear();
                 }
             }
-            // Add to the list left value as input is not ended with a ','.
+            // Add to the list left value because input is not ended with a ','.
             dailyOpeningPricesProcessed.Add(float.Parse(partialValue.ToString()));
             return dailyOpeningPricesProcessed;
         }
     }
 
-    //Class responsible to calculate Best possible trade form the input
-    //It iterates only once throught the list while keeping track 
-    //Of days,prices and the best profit during the period 
+    // Class responsible to calculate Best possible trade form the input
+    // It iterates only once throught the list while keeping track 
+    // of days,prices and the best profit during the period. 
     public class TheBestTrade
     { 
         public static string TradeOfMonth(List<float> dailyPrices)
@@ -65,7 +65,6 @@ namespace ConsoleApp
                         buyDayOfMonth = tempBuyDayIndex + 1;
                         sellDayOfMonth = i + 1;
                     }
-
                 }            
             }
             return ($"{buyDayOfMonth}({minPrice}),{sellDayOfMonth}({maxPrice})");
