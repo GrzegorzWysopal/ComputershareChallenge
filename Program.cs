@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace ConsoleApp
 {   
     // Class responsible for processing string input into a list of floats.
